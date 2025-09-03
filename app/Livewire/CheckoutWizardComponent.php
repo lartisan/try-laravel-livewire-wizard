@@ -45,7 +45,7 @@ class CheckoutWizardComponent extends WizardComponent
 
     private function getOffer()
     {
-        $fileContent = file_get_contents("/Users/cristianiosif/Downloads/oferta.json");
+        $fileContent = file_get_contents(resource_path('assets/oferta.json'));
 
         return json_decode($fileContent, true);
     }
