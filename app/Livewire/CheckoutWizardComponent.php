@@ -2,7 +2,6 @@
 
 namespace App\Livewire;
 
-use App\DTO\VerifiedOffer;
 use App\Support\Livewire\Immutable;
 use Spatie\LivewireWizard\Components\WizardComponent;
 
