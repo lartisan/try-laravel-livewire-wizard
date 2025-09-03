@@ -2,11 +2,18 @@
 
 namespace App\Livewire;
 
+use App\DTO\VerifiedOffer;
 use Spatie\LivewireWizard\Components\StepComponent;
 
 class ThirdStep extends StepComponent
 {
-    public array $offer = [];
+    public VerifiedOffer $offer;
+    public string $offerId;
+
+    public function mount()
+    {
+        $this->offer = session('offer:'.$this->offerId);
+    }
 
     public function render()
     {

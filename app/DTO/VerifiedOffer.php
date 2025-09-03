@@ -3,16 +3,20 @@
 namespace App\DTO;
 
 use Carbon\CarbonImmutable;
+use Livewire\Wireable;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\Validation\Uuid;
 use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
+use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
-class VerifiedOffer extends Data
+class VerifiedOffer extends Data implements Wireable
 {
+    use WireableData;
+
     public function __construct(
         public readonly string $search_id,
         public readonly string $search_currency,

@@ -7,11 +7,16 @@ use Spatie\LivewireWizard\Components\WizardComponent;
 
 class CheckoutWizardComponent extends WizardComponent
 {
+    public string $offerId;
     public array $offer;
 
     public function mount()
     {
         $this->offer = $this->getOffer();
+        $this->offerId = $this->offer['id'];
+
+        session()->put('offer:'.$this->offerId, VerifiedOffer::from($this->offer));
+
         /*$start = microtime(true);
         $offer = VerifiedOffer::from($this->offer);
         ray(microtime(true) - $start)->blue();*/
@@ -30,13 +35,13 @@ class CheckoutWizardComponent extends WizardComponent
     {
         return [
             'first-step' => [
-                'offer' => $this->offer,
+                'offerId' => $this->offerId,
             ],
             'second-step' => [
-                'offer' => $this->offer,
+                'offerId' => $this->offerId,
             ],
             'third-step' => [
-                'offer' => $this->offer,
+                'offerId' => $this->offerId,
             ],
         ];
     }
