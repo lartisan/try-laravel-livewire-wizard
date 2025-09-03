@@ -3,12 +3,14 @@
 namespace App\Livewire;
 
 use App\DTO\VerifiedOffer;
+use App\Support\Livewire\Immutable;
 use Spatie\LivewireWizard\Components\WizardComponent;
 
 class CheckoutWizardComponent extends WizardComponent
 {
-    public string $offerId;
+    #[Immutable]
     public array $offer;
+    public string $offerId;
 
     public function mount()
     {
