@@ -12,14 +12,14 @@ class CheckoutWizardComponent extends WizardComponent
 
     public function mount()
     {
+        $start = microtime(true);
+
         $this->offer = $this->getOffer();
         $this->offerId = $this->offer['id'];
 
         session()->put('offer:'.$this->offerId, VerifiedOffer::from($this->offer));
 
-        /*$start = microtime(true);
-        $offer = VerifiedOffer::from($this->offer);
-        ray(microtime(true) - $start)->blue();*/
+        ray(['Wizard' => microtime(true) - $start])->blue();
     }
 
     public function steps(): array

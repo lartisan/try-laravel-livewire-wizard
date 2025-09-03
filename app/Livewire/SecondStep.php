@@ -12,7 +12,9 @@ class SecondStep extends StepComponent
 
     public function mount()
     {
+        $start = microtime(true);
         $this->offer = session('offer:'.$this->offerId);
+        ray(['SecondStep' => microtime(true) - $start])->blue();
     }
 
     public function render()
