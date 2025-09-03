@@ -10,6 +10,10 @@ class ThirdStep extends StepComponent
 
     public function render()
     {
-        return view('livewire.third-step');
+        $start = microtime(true);
+        $return = view('livewire.third-step');
+        ray(['ThirdStep' => microtime(true) - $start])->blue();
+
+        return $return;
     }
 }
