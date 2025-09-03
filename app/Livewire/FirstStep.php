@@ -2,10 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Support\Livewire\Immutable;
 use Spatie\LivewireWizard\Components\StepComponent;
 
 class FirstStep extends StepComponent
 {
+    #[Immutable]
     public array $offer = [];
 
     public function render()
