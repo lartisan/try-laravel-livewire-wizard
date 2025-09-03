@@ -10,6 +10,10 @@ class FirstStep extends StepComponent
 
     public function render()
     {
-        return view('livewire.first-step');
+        $start = microtime(true);
+        $return = view('livewire.first-step');
+        ray(['FirstStep' => microtime(true) - $start])->blue();
+
+        return $return;
     }
 }

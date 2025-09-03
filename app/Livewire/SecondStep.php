@@ -10,6 +10,10 @@ class SecondStep extends StepComponent
 
     public function render()
     {
-        return view('livewire.second-step');
+        $start = microtime(true);
+        $return = view('livewire.second-step');
+        ray(['SecondStep' => microtime(true) - $start])->blue();
+
+        return $return;
     }
 }
