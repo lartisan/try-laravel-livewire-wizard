@@ -1,8 +1,3 @@
-@php
-    // $offer = \App\DTO\VerifiedOffer::from($offer);
-    // ray($offer)->blue();
-@endphp
-
 <div class="flex flex-col gap-24">
     <h1>1st Step - {{ $offer['departure_name'] }} - {{ $offer['destination_name'] }}</h1>
 
